@@ -14,11 +14,14 @@ class MoviesControllerSpec extends Specification {
     }
 
     def "should return the movies in box office"() {
+		given:
+		controller.params.count = 5
+		
 		when:
 		controller.getBoxOffice()
 		
 		then:
-		1 * controller.moviesService.getBoxOffice() >> [
+		1 * controller.moviesService.getBoxOffice(5) >> [
 			movies : [
 				[title:"Ant-Man"],
 				[title:"Pixels"],

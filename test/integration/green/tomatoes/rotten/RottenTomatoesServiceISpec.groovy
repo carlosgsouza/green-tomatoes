@@ -16,12 +16,20 @@ class RottenTomatoesServiceISpec extends Specification {
 		service = new RottenTomatoesService()
 	}
 
-	def "should get the box office titles from rotten tomatoes"() {
+	@Unroll
+	def "should get #numberOfResults box office titles from rotten tomatoes"() {
 		when:
-		def result = service.getBoxOfficeTitles()
+		def result = service.getBoxOfficeTitles(numberOfResults)
 		
 		then:
-		result.movies.size() == 5
+		result.movies.size() == numberOfResults
 		result.movies.every{ it.title != null }
+		
+		where:
+		numberOfResults << [
+			1, 
+			5, 
+			10	
+		]
 	}
 }

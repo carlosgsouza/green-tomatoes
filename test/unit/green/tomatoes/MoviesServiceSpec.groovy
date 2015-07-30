@@ -17,10 +17,10 @@ class MoviesServiceSpec extends Specification {
 
     def "should return the movies in the box office"() {
 		when:
-		def result = service.getBoxOffice()
+		def result = service.getBoxOffice(5)
 		
 		then:
-		1 * service.rottenTomatoesService.getBoxOfficeTitles() >> [
+		1 * service.rottenTomatoesService.getBoxOfficeTitles(5) >> [
 			movies : [
 				[title:"Ant-Man", synopsis:"A movie about a tiny guy", posters:[thumbnail:"ant-man.png"], another:"field"],
 				[title:"Pixels", synopsis:null, posters:[]],

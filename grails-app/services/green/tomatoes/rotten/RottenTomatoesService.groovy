@@ -14,10 +14,10 @@ class RottenTomatoesService {
 		rest.setProxy("www-proxy.exu.ericsson.se", 8080, 'http')
 	}
 	
-    def getBoxOfficeTitles() {
+    def getBoxOfficeTitles(int count) {
 		def response = rest.get(
 			path :"/api/public/v1.0/lists/movies/box_office.json",
-			query : [limit:5, country:"br", apikey:"7ecm6k2vrdxzsfkkjn3gw8mp"],
+			query : [limit:count, country:"br", apikey:"7ecm6k2vrdxzsfkkjn3gw8mp"],
 			contentType : ContentType.JSON
 		)
 		

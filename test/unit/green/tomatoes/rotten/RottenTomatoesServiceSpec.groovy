@@ -16,7 +16,7 @@ class RottenTomatoesServiceSpec extends Specification {
 	
 	def "should request the box office titles from rotten tomatoes"() {
 		when:
-		def result = service.getBoxOfficeTitles()
+		def result = service.getBoxOfficeTitles(5)
 		
 		then:
 		1 * service.rest.get({
@@ -25,27 +25,15 @@ class RottenTomatoesServiceSpec extends Specification {
 			assert it.contentType == ContentType.JSON
 			true
 		}) >> [
-			statys: 200,
+			status: 200,
 			data: [
-				movies : [
-					[title:"Ant-Man"],
-					[title:"Pixels"],
-					[title:"Minions"],
-					[title:"Trainwreck"],
-					[title:"Southpaw"]
-				]
+				movies : "..."
 			]
 		]
 		
 		and:
 		result == [
-			movies : [
-				[title:"Ant-Man"],
-				[title:"Pixels"],
-				[title:"Minions"],
-				[title:"Trainwreck"],
-				[title:"Southpaw"]
-			]
+			movies : "..."
 		]
 	}
 	
