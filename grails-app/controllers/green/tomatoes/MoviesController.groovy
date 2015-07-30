@@ -4,10 +4,13 @@ import grails.converters.JSON
 
 class MoviesController {
 
-    def index() { }
+    MoviesService moviesService
 	
 	def getBoxOffice() {
-		def result = [:]
-		render [:] as JSON
+		def result = moviesService.getBoxOffice()
+		
+		response.status = 200
+		response.contentType = "application/json"
+		render result as JSON
 	}
 }
