@@ -15,6 +15,12 @@ class MoviesControllerSpec extends Specification {
     def cleanup() {
     }
 
-    void "test something"() {
-    }
+    def "should return the movies in box office"() {
+		when:
+		controller.getBoxOffice()
+		
+		then:
+		response.status == 200
+		response.json == [:]
+	}
 }
