@@ -10,9 +10,7 @@ import spock.lang.Specification
 class MoviesControllerSpec extends Specification {
 
     def setup() {
-    }
-
-    def cleanup() {
+		controller.moviesService = Mock(MoviesService)
     }
 
     def "should return the movies in box office"() {
@@ -20,7 +18,26 @@ class MoviesControllerSpec extends Specification {
 		controller.getBoxOffice()
 		
 		then:
+		1 * controller.moviesService.getBoxOffice() >> [
+			movies : [
+				[title:"Ant-Man"],
+				[title:"Pixels"],
+				[title:"Minions"],
+				[title:"Trainwreck"],
+				[title:"Southpaw"]
+			]
+		]
+		
+		and:
 		response.status == 200
-		response.json == [:]
+		response.json == [
+			movies : [
+				[title:"Ant-Man"],
+				[title:"Pixels"],
+				[title:"Minions"],
+				[title:"Trainwreck"],
+				[title:"Southpaw"]
+			]
+		]
 	}
 }
