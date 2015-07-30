@@ -8,11 +8,8 @@ class RottenTomatoesService {
 
 	RESTClient rest
 	
-	String baseUrl = "http://api.rottentomatoes.com"
-	String apiKey = "7ecm6k2vrdxzsfkkjn3gw8mp"
-	
 	public RottenTomatoesService() {
-		rest = new RESTClient(baseUrl)
+		rest = new RESTClient("http://api.rottentomatoes.com")
 		
 		rest.setProxy("www-proxy.exu.ericsson.se", 8080, 'http')
 	}
@@ -20,7 +17,7 @@ class RottenTomatoesService {
     def getBoxOfficeTitles() {
 		def response = rest.get(
 			path :"/api/public/v1.0/lists/movies/box_office.json",
-			query : [limit:5, country:"br", apikey:apiKey],
+			query : [limit:5, country:"br", apikey:"7ecm6k2vrdxzsfkkjn3gw8mp"],
 			contentType : ContentType.JSON
 		)
 		
