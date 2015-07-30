@@ -3,6 +3,7 @@ package green.tomatoes
 
 
 import grails.test.mixin.TestFor
+import green.tomatoes.rotten.RottenTomatoesService
 
 import org.codehaus.groovy.grails.commons.DefaultGrailsApplication
 
@@ -23,6 +24,7 @@ class MoviesControllerISpec extends Specification {
 	   
    def setup() {
 	   controller.moviesService = new MoviesService()
+	   controller.moviesService.rottenTomatoesService = new RottenTomatoesService()
    }
 
     def "should return the movies in box office"() {
@@ -31,14 +33,10 @@ class MoviesControllerISpec extends Specification {
 		
 		then:
 		controller.response.status == 200
-		controller.response.json == [
-			movies : [
-				[title:"Ant-Man"],
-				[title:"Pixels"],
-				[title:"Minions"],
-				[title:"Trainwreck"],
-				[title:"Southpaw"]
-			]
-		]
+		controller.response.contentType == "application/json;charset=UTF-8"
+		controller.response.json.movies.size() == 5
+		controller.response.json.movies.every{ it.title }
+		controller.response.json.movies.every{ it.description }
+		controller.response.json.movies.every{ it.thumbnail }
 	}
 }
