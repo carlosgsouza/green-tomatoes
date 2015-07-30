@@ -29,8 +29,8 @@ class MoviesControllerSpec extends Specification {
 		]
 		
 		and:
-		response.status == 200
-		response.json == [
+		controller.response.status == 200
+		controller.response.json == [
 			movies : [
 				[title:"Ant-Man"],
 				[title:"Pixels"],
