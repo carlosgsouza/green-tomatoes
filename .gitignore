@@ -47,3 +47,4 @@ Temporary Items
 target-eclipse/*
 target/*
 cobertura.ser
+web-app/WEB-INF/tld/c.tld

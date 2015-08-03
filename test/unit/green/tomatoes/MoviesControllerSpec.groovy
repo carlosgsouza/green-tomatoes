@@ -1,7 +1,8 @@
 package green.tomatoes
 
-import grails.test.mixin.TestFor
+import grails.test.mixin.*
 import spock.lang.Specification
+import spock.lang.Unroll
 
 /**
  * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
@@ -42,5 +43,35 @@ class MoviesControllerSpec extends Specification {
 				[title:"Southpaw"]
 			]
 		]
+	}
+	
+	@Unroll
+	def "should fail when trying to use invalid parameter count=#count to get box office movies"() {
+		given:
+		controller.params.count = count
+		
+		when:
+		controller.getBoxOffice()
+		
+		then:
+		thrown Exception
+		
+		where:
+		count << [
+			-1,
+			0,
+			"five"
+		]
+	}
+
+    def "should return 5 box office titles if no count parameter is provided"() {
+		expect:
+		controller.params.count == null
+		
+		when:
+		controller.getBoxOffice()
+		
+		then:
+		1 * controller.moviesService.getBoxOffice(5)
 	}
 }
