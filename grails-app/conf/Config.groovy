@@ -115,3 +115,9 @@ log4j.main = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+rottenTomatoes {
+	api {
+		key = "7ecm6k2vrdxzsfkkjn3gw8mp"
+	}
+}
