@@ -6,6 +6,10 @@ class MoviesController {
 
     MoviesService moviesService
 	
+	def index() {
+		
+	}
+	
 	def getBoxOffice() {
 		int count = params.count != null ? params.count : 5
 		
