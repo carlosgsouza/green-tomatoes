@@ -13,13 +13,21 @@
 		<link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
 		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
   		<asset:stylesheet src="application.css"/>
-		<asset:javascript src="application.js"/>
+		
+		
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
 		<g:layoutHead/>
 	</head>
-	<body>
+	<body ng-app="greenTomatoes" >
 		<div id="grailsLogo" role="banner"><h1 class="blink_me">Green Tomatoes</h1></div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
+		
+		<!-- Modules -->
+	    <asset:javascript src="app.js"/>
+	
+	    <!-- Controllers -->
+	    <asset:javascript src="controllers/MoviesController.js"/>
 	</body>
 </html>
