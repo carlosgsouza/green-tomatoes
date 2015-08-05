@@ -11,7 +11,7 @@ class MoviesController {
 	}
 	
 	def getBoxOffice() {
-		int count = params.count != null ? params.count : 5
+		int count = params.count != null ? params.count.toInteger() : 5
 		
 		if(count < 1) {
 			throw new IllegalArgumentException("count should be >= 1")
