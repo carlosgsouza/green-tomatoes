@@ -14,6 +14,7 @@
 	    				<div>{{ movie.description }}</div>
 	    		</tr>
 	    	</table>
+	    	<div class="showMore"><a href="#" ng-click="showMore()">Show More</a></div>
     		<div class="pagination">
     			<div class="currentStep">{{ movies.length }} movies found</div>
     		</div>

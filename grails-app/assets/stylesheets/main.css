@@ -517,6 +517,11 @@ th:hover, tr:hover {
 
 /* PAGINATION */
 
+.showMore {
+	text-align: center;
+	padding: 10px;
+}
+
 .pagination {
 	border-top: 0;
 	margin: 0;
