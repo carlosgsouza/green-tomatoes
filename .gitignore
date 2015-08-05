@@ -48,3 +48,4 @@ target-eclipse/*
 target/*
 cobertura.ser
 web-app/WEB-INF/tld/c.tld
+prodDb.h2.db
