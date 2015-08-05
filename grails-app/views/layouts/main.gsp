@@ -36,5 +36,8 @@
 	
 	    <!-- Filters -->
 	    <asset:javascript src="filters/MovieDescriptionFilter.js"/>
+	    
+	    <!-- Directives -->
+	    <asset:javascript src="directives/MovieDirective.js"/>
 	</body>
 </html>
