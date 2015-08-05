@@ -9,7 +9,11 @@ app.controller('MoviesController', ['$scope', 'MoviesService', function($scope, 
 	};
 	
 	$scope.showMore = function() {
-		$scope.totalMovies += 10;
+		$scope.totalMovies += 5;
 		$scope.getBoxOfficeTitles();
 	};
+	
+	$scope.canShowMore = function() {
+		return ($scope.totalMovies < 50);
+	}
 }]);
