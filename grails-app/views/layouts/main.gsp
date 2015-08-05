@@ -15,7 +15,8 @@
   		<asset:stylesheet src="application.css"/>
 		
 		
-		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-resource.js"></script>
 		<g:layoutHead/>
 	</head>
 	<body ng-app="greenTomatoes" >
@@ -29,5 +30,8 @@
 	
 	    <!-- Controllers -->
 	    <asset:javascript src="controllers/MoviesController.js"/>
+	
+	    <!-- Services -->
+	    <asset:javascript src="services/MoviesService.js"/>
 	</body>
 </html>

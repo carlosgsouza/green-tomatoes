@@ -5,7 +5,7 @@
     </head>
     <body>
     	<h2>Box Office Movies</h2>
-    	<div ng-controller="MoviesController">
+    	<div ng-controller="MoviesController" ng-init="getBoxOfficeTitles()">
 	    	<table>
 	    		<tr ng-repeat="movie in movies">
 	    			<td class="thumbnail"><img ng-src="{{ movie.thumbnail }}" /></td>
@@ -14,7 +14,9 @@
 	    				<div>{{ movie.description }}</div>
 	    		</tr>
 	    	</table>
-    		<div class="pagination">{{ getMovieCount() }} movies found</div>
+    		<div class="pagination">
+    			<div class="currentStep">{{ movies.length }} movies found</div>
+    		</div>
     	</div>
     </body>
 </html>
