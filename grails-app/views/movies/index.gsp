@@ -11,7 +11,7 @@
 	    			<td class="thumbnail"><img ng-src="{{ movie.thumbnail }}" /></td>
 	    			<td>
 	    				<h3>{{ movie.title }}</h3>
-	    				<div>{{ movie.description }}</div>
+	    				<div>{{ movie.description | description }}</div>
 	    		</tr>
 	    	</table>
 	    	<div class="showMore" ng-show="canShowMore()"><a href="#" ng-click="showMore()">Show More</a></div>

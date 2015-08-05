@@ -33,5 +33,8 @@
 	
 	    <!-- Services -->
 	    <asset:javascript src="services/MoviesService.js"/>
+	
+	    <!-- Filters -->
+	    <asset:javascript src="filters/MovieDescriptionFilter.js"/>
 	</body>
 </html>
