@@ -17,7 +17,7 @@ class RottenTomatoesService {
 		rest.setProxy("www-proxy.exu.ericsson.se", 8080, 'http')
 	}
 	
-    def getBoxOfficeTitles(int count) {
+    def synchronized getBoxOfficeTitles(int count) {
 		def response = rest.get(
 			path :"/api/public/v1.0/lists/movies/box_office.json",
 			query : [limit:count, country:"br", apikey:grailsApplication.config.rottenTomatoes.api.key],
