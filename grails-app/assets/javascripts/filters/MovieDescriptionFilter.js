@@ -2,7 +2,7 @@ app.filter('description', function() {
 	var MAX_SIZE = 400;
 	
 	return function(input) {
-		if(input === null) {
+		if(input === undefined) {
 			return "";
 		} 
 
