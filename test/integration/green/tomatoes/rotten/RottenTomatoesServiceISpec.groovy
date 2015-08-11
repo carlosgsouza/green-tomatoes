@@ -11,8 +11,9 @@ import spock.lang.*
 
 class RottenTomatoesServiceISpec extends Specification {
 
-	RottenTomatoesService service
 	static grailsApplication
+
+	RottenTomatoesService service
 	
    def setupSpec() {
 		def filePath = new File('grails-app/conf/Config.groovy').toURL()
