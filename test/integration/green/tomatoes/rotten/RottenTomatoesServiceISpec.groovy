@@ -6,14 +6,25 @@ import grails.test.mixin.TestFor;
 
 import java.security.Provider.Service;
 
+import org.codehaus.groovy.grails.commons.DefaultGrailsApplication
 import spock.lang.*
 
 class RottenTomatoesServiceISpec extends Specification {
 
 	RottenTomatoesService service
+	static grailsApplication
+	
+   def setupSpec() {
+		def filePath = new File('grails-app/conf/Config.groovy').toURL()
+		def config = new ConfigSlurper(System.properties.get('grails.env')).parse(filePath)
+
+		grailsApplication = new DefaultGrailsApplication()
+		grailsApplication.config = config
+	}
 	
 	def setup() {
 		service = new RottenTomatoesService()
+		service.grailsApplication = grailsApplication
 	}
 
 	@Unroll

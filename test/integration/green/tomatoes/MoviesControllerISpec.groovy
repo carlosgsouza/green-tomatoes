@@ -25,7 +25,7 @@ class MoviesControllerISpec extends Specification {
    def setup() {
 	   controller.moviesService = new MoviesService()
 	   controller.moviesService.rottenTomatoesService = new RottenTomatoesService()
-	   controller.moviesService.rottenTomatoesService.grailsApplication = grailsApplications
+	   controller.moviesService.rottenTomatoesService.grailsApplication = grailsApplication
    }
 
     def "should return the movies in box office"() {
