@@ -10,3 +10,8 @@
   
 * From root folder, on cmd (terminal) execute this command:
 ```karma start grails-app/conf/karma/unit.conf.js```
+
+
+###How to compile SASS files within CLI
+Ok, there is several ways to automate it, but you can run this command in your terminal:
+```sass grails-app\assets\stylesheets\main.scss > grails-app\assets\stylesheets\main.css```

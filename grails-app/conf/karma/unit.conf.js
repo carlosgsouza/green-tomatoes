@@ -8,11 +8,14 @@ module.exports = function(config) {
 			'http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-resource.js',
 			'http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js',
 			'http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-mocks.js',
-			'grails-app/assets/javascripts/app.js',
 			'grails-app/assets/javascripts/**/*.js',
 			'test/js-unit/**/*Spec.js'
 		],
 		exclude : [],
+		
+		preprocessors : {
+			'grails-app/assets/javascripts/**/*.js': 'coverage'
+		},
 
 		reporters : [ 'progress', 'junit', 'coverage', 'html'],
 
@@ -24,7 +27,7 @@ module.exports = function(config) {
 		},
 		coverageReporter: {
 			reporters: [
-				{type : 'html', dir : 'target/test-reports/karma/coverage/'},
+				{type : 'html', dir : 'target/test-reports/karma/html/coverage/'},
 				{type : 'cobertura', dir : 'target/test-reports/karma/coverage/'}
 			]
 		},
@@ -46,7 +49,7 @@ module.exports = function(config) {
 
 		captureTimeout : 30000,
 		singleRun : false,
-
+		
 		plugins : [
 			'karma-jasmine',
 			'karma-chrome-launcher',
