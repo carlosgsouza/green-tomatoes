@@ -24,8 +24,5 @@ class MovieFunctionalSpec extends GebReportingSpec {
 			movieList.size() >= 5
 		}
 	}
-	
-	def cleanupSpec(){
-	}
-	
+
 }
