@@ -1,7 +1,7 @@
 <h2>Box Office Movies</h2>
 
 <div ng-init="getBoxOfficeTitles()">
-	<div ng-repeat="movie in movies">
+	<div ng-repeat="movie in movies" class="ft-movies">
 		<movie info="movie"></movie>
 	</div>
 	
