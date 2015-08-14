@@ -4,7 +4,7 @@
   "description": "This is a simple project to exercise the engineering skills with Grails + AngularJS + SASS",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danielpsf/green-tomatoes.git"
+    "url": "git+https://github.com/carlosgsouza/green-tomatoes.git"
   },
   "keywords": [
     "grails",
@@ -15,9 +15,9 @@
   "author": "Garcia, Carlos.",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/danielpsf/green-tomatoes/issues"
+    "url": "https://github.com/carlosgsouza/green-tomatoes/issues"
   },
-  "homepage": "https://github.com/danielpsf/green-tomatoes#readme",
+  "homepage": "https://github.com/carlosgsouza/green-tomatoes#readme",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
