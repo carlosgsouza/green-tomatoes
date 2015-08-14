@@ -27,7 +27,7 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			css: {
-				files: ['web-app/scss/*.scss'],
+				files: ['grails-app/stylesheets/**/*.scss'],
 				tasks: ['sass'],
 				options: {
 					nospawn: true
