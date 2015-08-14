@@ -23,7 +23,7 @@ describe("MoviesController", function() {
 		$httpBackend
 			.expectGET("http://localhost:8080/green-tomatoes/movies/getBoxOffice?count=5&ts=" + timestamp)
 			.respond(200, {"movies" : [{"title": "Potato with cream cheese"}, {"title": "Potato"}]});
-			
+
 		//when: the method getBoxOfficeTitles is invoked
 		scope.getBoxOfficeTitles();
 
