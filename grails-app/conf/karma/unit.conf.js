@@ -12,10 +12,6 @@ module.exports = function(config) {
 			'test/js-unit/**/*Spec.js'
 		],
 		exclude : [],
-		
-		preprocessors : {
-			'grails-app/assets/javascripts/**/*.js': 'coverage'
-		},
 
 		reporters : [ 'progress', 'junit', 'coverage', 'html'],
 
@@ -49,7 +45,7 @@ module.exports = function(config) {
 
 		captureTimeout : 30000,
 		singleRun : false,
-		
+
 		plugins : [
 			'karma-jasmine',
 			'karma-chrome-launcher',

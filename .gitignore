@@ -52,3 +52,6 @@ prodDb.h2.db
 
 # Since we`re using SASS, we don`t need CSS files anymore.
 *.css
+.sass-cache
+node_modules
+grails-app/assets/javascripts/**/*.html
