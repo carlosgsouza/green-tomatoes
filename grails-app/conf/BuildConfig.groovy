@@ -23,6 +23,8 @@ grails.project.fork = [
 
 grails.project.dependency.resolver = "maven" // or ivy
 grails.project.dependency.resolution = {
+	def gebVersion = "0.12.0"
+	def webdriverVersion = "2.45.0"
     // inherit Grails' default dependencies
     inherits("global") {
         // specify dependency exclusions here; for example, uncomment this to disable ehcache:
@@ -51,9 +53,16 @@ grails.project.dependency.resolution = {
         
 		compile "org.codehaus.groovy.modules.http-builder:http-builder:0.7.1"
 		
-        test "org.grails:grails-datastore-test-support:1.0-grails-2.4"
+		compile 'org.apache.httpcomponents:httpcore:4.3.2'
+		compile 'org.apache.httpcomponents:httpclient:4.3.5'
 		
+		test "org.seleniumhq.selenium:selenium-support:${webdriverVersion}"
+		test "org.seleniumhq.selenium:selenium-firefox-driver:${webdriverVersion}"
+		
+		test "org.gebish:geb-spock:$gebVersion"
 		test "org.objenesis:objenesis:1.2"
+		
+        test "org.grails:grails-datastore-test-support:1.0-grails-2.4"
 		test "cglib:cglib-nodep:2.2.2"
     }
 
@@ -71,6 +80,7 @@ grails.project.dependency.resolution = {
         runtime ":database-migration:1.4.0"
         runtime ":jquery:1.11.1"
 		
+		test ":geb:$gebVersion"
 		test ":code-coverage:2.0.3-2"
 
         // Uncomment these to enable additional asset-pipeline capabilities
