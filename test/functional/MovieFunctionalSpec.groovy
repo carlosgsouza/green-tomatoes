@@ -15,11 +15,11 @@ class MovieFunctionalSpec extends GebReportingSpec {
 		}
 	}
 	
-	def "when the user opens movie list page it should show a list with 5 or more titles"(){
-		when:
+	def "when the user is at movie list page it should show a list with 5 or more titles"(){
+		expect:
 		at MoviePage
 		
-		then:
+		and:
 		waitFor("slow"){
 			movieList.size() >= 5
 		}
